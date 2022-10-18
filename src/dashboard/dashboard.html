@@ -11,8 +11,8 @@
   <body class="h-screen bg-black text-primary">
     <main class="grid-template-areas grid h-full grid-cols-[250px_1fr] grid-rows-[1fr_auto]">
       <aside class="sidenav">sidenav</aside>
-      <section class="content">
-        <header class="border-2 border-solid px-8 py-4">
+      <article class="content relative overflow-auto bg-transparent">
+        <header class="header bg-transparent px-8 py-4">
           <nav class="relative flex justify-end">
             <button id="user-profile-btn" class="flex items-center gap-x-2 rounded-2xl p-1 px-2 hover:bg-light-black">
               <section>
@@ -42,22 +42,26 @@
             </ul>
           </nav>
         </header>
-        <article class="p-4">
-          <h1 class="text-2xl">Featured</h1>
-          <section id="featured-playlist-items" class="featured-songs grid grid-cols-auto-fill-cards gap-4">
-            <!-- <section class="rounded border-2 border-solid p-4">
-              <img src="https://i.scdn.co/image/ab67706f0000000384696e0bd9318a598cc9373d" alt=" " />
-              <h2 class="text-sm">Name</h2>
-              <h3 class="text-xs">Description</h3>
-            </section>
-            <section>
-              <img src="https://i.scdn.co/image/ab67706f0000000384696e0bd9318a598cc9373d" alt=" " />
-              <h2>Name</h2>
-              <h3>Description</h3>
-            </section> -->
-          </section>
+        <article
+          id="cover-content"
+          class="absolute top-0 -z-[1] grid h-72 w-full content-center bg-gradient-to-b from-light-black to-black-base px-4"
+        >
+          <h1 class="text-6xl">Hello Gaurav</h1>
         </article>
-      </section>
+        <section id="page-content" class="mt-48 bg-black-base">
+          <header class="px-8">
+            <nav>
+              <ul class="grid grid-cols-[50px_2fr_1fr_50px] gap-4 text-secondary">
+                <li class="justify-self-center">#</li>
+                <li>Title</li>
+                <li>Album</li>
+                <li>🕚</li>
+              </ul>
+            </nav>
+          </header>
+          <section class="px-8" id="tracks"></section>
+        </section>
+      </article>
       <footer class="now-playing">now playing</footer>
     </main>
   </body>
