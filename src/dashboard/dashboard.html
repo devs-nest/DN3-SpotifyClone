@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify Player</title>
     <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
+    />
     <script type="module" src="dashboard.js"></script>
   </head>
   <body class="h-screen bg-black text-primary">
     <main class="grid-template-areas grid h-full grid-cols-[250px_1fr] grid-rows-[1fr_auto]">
       <aside class="sidenav">sidenav</aside>
       <article class="content relative overflow-auto bg-transparent">
-        <header class="header bg-transparent px-8 py-4">
+        <header class="header z-10 bg-transparent px-8 py-4">
           <nav class="relative flex justify-end">
             <button id="user-profile-btn" class="flex items-center gap-x-2 rounded-2xl p-1 px-2 hover:bg-light-black">
               <section>
@@ -44,9 +48,15 @@
         </header>
         <article
           id="cover-content"
-          class="absolute top-0 -z-[1] grid h-72 w-full content-center bg-gradient-to-b from-light-black to-black-base px-4"
+          class="absolute top-0 -z-[1] grid h-72 w-full grid-cols-[auto_1fr] gap-4 bg-gradient-to-b from-light-black to-black-base px-4 pt-20"
         >
-          <h1 class="text-6xl">Hello Gaurav</h1>
+          <!-- <h1 class="text-6xl">Hello Gaurav</h1> -->
+          <img src="" alt="" />
+          <section>
+            <h2 id="playlist-name" class="text-4xl">PlaylistName</h2>
+            <p id="playlist-artists">artists</p>
+            <p id="playlist-details">likes</p>
+          </section>
         </article>
         <section id="page-content" class="mt-48 bg-black-base">
           <header class="px-8">
@@ -62,7 +72,44 @@
           <section class="px-8" id="tracks"></section>
         </section>
       </article>
-      <footer class="now-playing">now playing</footer>
+      <footer class="now-playing border-t border-t-light-black bg-black-secondary px-4 text-secondary">
+        <section class="grid grid-cols-[1fr_2fr_1fr] gap-4">
+          <section class="grid grid-cols-[auto_1fr] place-content-center gap-4">
+            <img id="now-playing-image" class="h-12 w-12" src="" srcset="" />
+            <section class="flex flex-col justify-center">
+              <h2 id="now-playing-song" class="text-sm font-semibold text-primary">song title</h2>
+              <p id="now-playing-artists" class="text-xs">song artists</p>
+            </section>
+          </section>
+          <!-- section for audio control -->
+          <section id="audio-control" class="flex flex-col items-center justify-center">
+            <section class="flex items-center justify-center hover:text-primary">
+              <button id="prev">
+                <span style="font-size: 48px" class="material-symbols-outlined"> skip_previous </span>
+              </button>
+              <button id="play">
+                <span class="material-symbols-outlined" style="font-size: 48px"> play_circle </span>
+              </button>
+              <button id="next">
+                <span class="material-symbols-outlined" style="font-size: 48px"> skip_next </span>
+              </button>
+            </section>
+
+            <section class="flex w-full items-center justify-center gap-4 p-1">
+              <span id="song-duration-completed">0:00</span>
+              <section id="timeline" class="w-full cursor-pointer rounded-3xl bg-secondary">
+                <section id="progress" class="h-2 w-0 rounded-3xl bg-green"></section>
+              </section>
+              <span id="total-song-duration">0:00</span>
+            </section>
+          </section>
+          <!-- section for volume -->
+          <section id="volume-control" class="flex items-center justify-center">
+            <span class="material-symbols-outlined"> volume_up </span>
+            <input id="volume" type="range" name="" value="100" min="0" max="100" />
+          </section>
+        </section>
+      </footer>
     </main>
   </body>
 </html>
