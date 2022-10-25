@@ -27,3 +27,8 @@
 .track.selected .play {
   visibility: visible;
 }
+
+.track.playing .track-no,
+.track.playing .song-title {
+  color: theme("colors.green");
+}
